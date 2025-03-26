@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<style>
+  body{
+    background-image: url('https://scontent-sin11-2.xx.fbcdn.net/v/t1.15752-9/484059737_2033959477077551_173923759333878935_n.png?_nc_cat=101&ccb=1-7&_nc_sid=9f807c&_nc_ohc=gf0vWhicXFUQ7kNvgHjzafa&_nc_oc=AdkPCu3LbdBmWYt30TzEoL2XjITEkr57h7EDOhtW-1Dpq6l9rRpNP1uKZikM1i_K_9lmTICtxYPYTp4JzuNX9RYY&_nc_zt=23&_nc_ht=scontent-sin11-2.xx&oh=03_Q7cD1wESi0j9NEURu5y05yHBCSFSXRbFe4wZ8c55GIzsq4Xvwg&oe=6804ECA5');
+  }
+</style>
+<body>
+<div class="container-fluid text-center mt-4">
+  <h2>Manage Users</h2>
+
+  <div id="userTable" class="mt-4">
+    <!-- User data will be dynamically populated here -->
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+          <tr>
+              <th>E-mail</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Edit</th>
+              <th>Delete</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr th:each="user : ${listUsers}">
+              <td><a th:href="@{/users/{id}(id=${user.id})}" th:text="${user.email}">example@example.com</a></td>
+              <td th:text="${user.firstName}">John</td>
+              <td th:text="${user.lastName}">Doe</td>
+              <td><a th:href="@{/users/edit/{id}(id=${user.id})}" class="btn btn-warning btn-sm">Edit</a></td>
+              <td><a th:href="@{/users/delete/{id}(id=${user.id})}" class="btn btn-danger btn-sm">Delete</a></td>
+          </tr>
+      </tbody>
+  </table>
+  </div>
+</div>
+</body>
+</html>

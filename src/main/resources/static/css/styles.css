@@ -1,0 +1,245 @@
+.container {
+    margin-top: 20px;
+}
+
+.stage {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    width: 100%;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.row .col-xl-10 {
+    display: flex;
+    justify-content: left;
+    border-radius: 5px;
+    width: 100%;
+    background-color: grey;
+    margin: 0;
+}
+
+.row .seat {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Changed from circle to rounded square */
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 12px;
+    color: white; /* Changed text color for better visibility */
+    border: 2px solid transparent;
+}
+
+.seat-table {
+    border-collapse: collapse;
+    margin: 50px;
+  }
+  
+  .seat-table td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 50%;
+    font-weight: 500;
+  }
+
+  .seat-table td div {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: inline-block;
+    padding: 10px;
+    margin: 2px;
+    font-size: 12px;
+    border-radius: 50%;
+    font-weight: 500;
+  }
+  
+
+  .seat-name-row {
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    color: #000;
+  }
+  
+
+
+.seat.vip {
+    background-color: #ff0055;
+    color: #fff;
+
+}
+
+.seat.premium{
+    background-color: #e67e22; 
+    color: #fff;
+}
+
+.seat.regular {
+    background-color: #3498db; /* Bright blue for regular seats */
+    color: white;
+}
+.seat.selected {
+    background-color: #27ae60; /* Green for selected seats */
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+}
+
+
+.seat.sold-out {
+    background-color: #b0b0b0df; /* Red for sold out */
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.seat.occupied {
+    background-color: grey; /* Orange for booking */
+    cursor: not-allowed;
+}
+.seat:hover:not(.sold-out):not(.selected):not(.booking) {
+    background-color: #ddd;
+    color: #000;
+}
+
+.seat-info {
+    text-align: center;
+    margin-top: 80px;
+
+}
+/* Reset previous circular transformations */
+.seat[data-seat^="A"],
+.seat[data-seat^="B"],
+.seat[data-seat^="C"] {
+    position: relative;
+    transform: none;
+    margin: 0;
+    padding: 0;
+}
+/* Add seat row wrapper */
+.seat-row {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    z-index: 2;
+    margin-top: 90px;
+}
+
+
+/* Subtle rotations for row A seats */
+.seat[data-seat="A1"] {
+    transform: rotate(50deg) translateY(-25px);
+}
+
+.seat[data-seat="A2"] {
+    transform: rotate(0deg) translateY(10px);
+}
+
+.seat[data-seat="A3"] {
+    transform: rotate(0deg) translateY(10px);
+}
+
+.seat[data-seat="A4"] {
+    transform: rotate(-50deg) translateY(-25px);
+}
+/* Subtle rotations for row B seats */
+.seat[data-seat="B1"] {
+    transform: rotate(50deg) translateY(-25px);
+}
+
+.seat[data-seat="B2"] {
+    transform: rotate(0deg) translateY(10px);
+}
+
+.seat[data-seat="B3"] {
+    transform: rotate(0deg) translateY(10px);
+}
+
+.seat[data-seat="B4"] {
+    transform: rotate(-50deg) translateY(-25px);
+}
+
+/* Subtle rotations for row C seats */
+.seat[data-seat="C1"] {
+    transform: rotate(50deg) translateY(-25px);
+}
+
+.seat[data-seat="C2"] {
+    transform: rotate(0deg) translateY(10px);
+}
+
+.seat[data-seat="C3"] {
+    transform: rotate(0deg) translateY(10px);
+}
+
+.seat[data-seat="C4"] {
+    transform: rotate(-50deg) translateY(-25px);
+}
+
+.table {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    position: absolute;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+.legend-item .seat {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}   
+
+.confirm{
+    padding: 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    border: #4CAF50 3px solid;
+}
+
+.confirm:hover {
+    background: #fff;
+    color: #4CAF50;
+    border: #4CAF50 3px solid;
+}
